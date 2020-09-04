@@ -15,10 +15,16 @@ export class RegisterComponent implements OnInit {
   public uiInvalidCredential = false;
 
   public fbFormGroup = this.fb.group({
-    username: ['', Validators.required],
+    username: [
+      '',
+      [Validators.required, Validators.minLength(3), Validators.maxLength(15)],
+    ],
     password: ['', Validators.required],
-    email: ['', Validators.required],
-    mobile: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    mobile: [
+      '',
+      [Validators.required, Validators.minLength(10), Validators.maxLength(10)],
+    ],
   });
 
   constructor(
