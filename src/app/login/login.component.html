@@ -1,57 +1,96 @@
 <div class="container-fluid">
-  <div class="row" style="height: 100vh">
-    <!-- Left Block -->
-    <div
-      class="col bg-warning d-flex flex-column justify-content-center align-items-center"
-    >
-      <div>
-        <fa-icon [icon]="faAirFreshener" style="font-size: 54px"></fa-icon>
-      </div>
-      <div class="h3">Welcome to my Appplication</div>
-      <div class="h6">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid,
-        harum!
-      </div>
+  <div
+    class="row sticky-top font-weight-bold bg-info"
+    style="height: 60px; background: #3b9296; color: black"
+  >
+    <div class="col d-flex align-items-center justify-content-center">
+      <img
+        src="assets/book.svg"
+        alt=""
+        style="height: 20px; margin-top: 18px"
+      />
+
+      <div style="margin-top: 17px">English Dictionary</div>
     </div>
-
-    <!-- Right Block-->
-    <div
-      class="col bg-light d-flex flex-column justify-content-center align-items-center"
-      [formGroup]="fbFormGroup"
-    >
-      <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
-        A simple danger alert—check it out!
-      </div>
-
-      <div class="h4">Application Login</div>
-
-      <div>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          class="form-control"
-          formControlName="username"
-        />
-      </div>
-
-      <div class="mt-1">
-        <input
-          type="password"
-          placeholder="Enter Password"
-          class="form-control"
-          formControlName="password"
-        />
-      </div>
-
-      <button
-        class="btn btn-sm btn-warning mt-2 mb-2"
-        [disabled]="!fbFormGroup.valid"
-        (click)="loginProcessHere()"
+    <div class="container-fluid">
+      <div
+        class="row"
+        style="
+          height: 100vh;
+          background: url(assets/beach.jpg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          object-fit: cover;
+          margin-top: 19px;
+        "
       >
-        Login Here
-      </button>
+        <div
+          class="col d-flex flex-column justify-content-center align-items-center"
+          [formGroup]="fbFormGroup"
+        >
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="uiInvalidCredential"
+          >
+            A simple danger alert—check it out!
+          </div>
+          <div class="row" style="height: 300px align-items-center">
+            <div
+              class="col-12 col-md-10 rounded justify-content-center align-items-center"
+              style="
+                height: 300px;
+                border: 2px solid rgb(76, 6, 90);
+                box-shadow: 2px 3px 3px 4px black;
+                opacity: 0.9;
+              "
+            >
+              <div
+                class="h4 font-weight-bold mb-3"
+                style="
+                  color: white !important;
+                  font-size: 2rem;
+                  text-align: center;
+                "
+              >
+                Login
+              </div>
 
-      <a routerLink="/register">Register Here</a>
+              <div class="mb-4">
+                <input
+                  type="text"
+                  placeholder="Enter Username"
+                  class="form-control"
+                  formControlName="username"
+                />
+              </div>
+
+              <div class="mb-3">
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  class="form-control"
+                  formControlName="password"
+                />
+              </div>
+
+              <button
+                class="btn btn-sm btn-dark mt-2 mb-2 ml-2 mr-4"
+                style="opacity: 0.9"
+                [disabled]="!fbFormGroup.valid"
+                (click)="loginProcessHere()"
+              >
+                Login
+              </button>
+
+              <button class="btn btn-sm btn-warning">
+                <a routerLink="/register">Sign up</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
